@@ -12,7 +12,7 @@ const {
   resumeSequence,
   addMailsToSequence,
   deleteNode,
-} = require("../controllers/SequenceController");
+} = require("../controllers/sequenceController");
 
 var router = express.Router();
 
