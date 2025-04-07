@@ -19,7 +19,7 @@ app.use(cors());
 
 
 app.use(cors({
-  origin: 'https://future-blink-26r1.vercel.app/',
+  origin: 'https://future-blink-26r1.vercel.app',
   methods: ['GET', 'POST', 'PUT', 'DELETE'], 
   credentials: true,
 }));
