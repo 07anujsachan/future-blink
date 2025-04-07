@@ -1,8 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
+import { Edge } from "@xyflow/react";
 
-export const createEdgesFromNodes = (nodes:any) => {
-  const edges = [];
+
+export const createEdgesFromNodes = (nodes: any): Edge[] => {
+  const edges: Edge[] = [];
 
   for (let i = 0; i < nodes.length - 1; i++) {
     edges.push({
@@ -10,14 +12,9 @@ export const createEdgesFromNodes = (nodes:any) => {
       source: nodes[i].id,
       target: nodes[i + 1].id,
       type: 'straight',
-      sourcePosition: 'bottom',
-      targetPosition: 'top', 
       style: {
         stroke: 'gray', 
         strokeWidth: 2,
-      },
-      markerEnd: {
-        color: 'gray',               
       },
     });
   }

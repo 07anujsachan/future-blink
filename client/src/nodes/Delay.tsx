@@ -1,17 +1,16 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Handle, Position } from "@xyflow/react";
 import { Clock } from "lucide-react";
-import { useState } from "react";
+
 
 export const DelayNode = ({ data }: any) => {
-  const [hovered, setHovered] = useState(false);
+  
 console.log(data);
 
   return (
     <div
       className="relative bg-white rounded-lg w-80  p-4 flex items-center gap-4 shadow-md hover:border-blue-400 transition-all"
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
+      
     >
    
 

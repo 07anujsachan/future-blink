@@ -1,17 +1,16 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Handle, Position } from "@xyflow/react";
 import { Mail } from "lucide-react";
-import { useState } from "react";
+
 
 export const ColdEmailNode = ({ data }: any) => {
-  const [hovered, setHovered] = useState(false);
-  console.log(data);
+
+
     
   return (
     <div
       className="relative flex items-center w-80 p-4 border border-gray-300 rounded-xl bg-white shadow-sm hover:border-purple-400 transition-all"
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
+    
     >
 
 

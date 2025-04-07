@@ -5,6 +5,7 @@ import {
   addEdge,
   Background,
   Controls,
+  Edge,
   MiniMap,
   OnConnect,
   ReactFlow,
@@ -23,11 +24,12 @@ import { AppNode } from "../nodes/types";
 import { addMailsToSequence, getSequenceById, startSequence } from "../services";
 import { createEdgesFromNodes } from "../utils/generateEdges";
 
+
 export default function SequenceBuilderPage() {
   const { id } = useParams();
 const navigate = useNavigate()
   const [nodes, setNodes, onNodesChange] = useNodesState<AppNode>(initialNodes);
-  const [edges, setEdges, onEdgesChange] = useEdgesState([]);
+  const [edges, setEdges, onEdgesChange] = useEdgesState<Edge>([]);
   const [emails, setEmails] = useState<string>("");
   const [selectedNodeId, setSelectedNodeId] = useState<string | null>(null);
   const [activeSequence, setActiveSequence] = useState(null);
@@ -106,6 +108,8 @@ const navigate = useNavigate()
   }, []);
 
   const handleNodeClick = (event: any, node: any) => {
+    console.log(event);
+    
     setSelectedNodeId(node.id);
   };
   const activeNode = nodes.find((node: any) => node.id === selectedNodeId);
@@ -150,7 +154,7 @@ const navigate = useNavigate()
       <Header />
 
       <div className="w-full px-12 py-6 flex justify-between items-center">
-        <h1 className="text-xl font-semibold">{activeSequence?.name}</h1>
+        <h1 className="text-xl font-semibold">{activeSequence?.["name"]}</h1>
 
         <div className="flex gap-3 items-center">
           <button
