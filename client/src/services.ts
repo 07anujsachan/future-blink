@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import axios from "axios";
-const BASE_URL = "http://localhost:3000/api";
-//  const BASE_URL= "https://future-blink-1.onrender.com/api"
+// const BASE_URL = "http://localhost:3000/api";
+ const BASE_URL= "https://future-blink-1.onrender.com/api"
 export const getAllSequences = async () => {
   try {
     const response = await axios.get(`${BASE_URL}/sequences`);
